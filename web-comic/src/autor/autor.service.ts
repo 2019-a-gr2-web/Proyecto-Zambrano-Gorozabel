@@ -16,9 +16,8 @@ export class AutorService{
     console.log(autorPrueba);
 
     //autorPrueba.editorial= 1;
-    const repEditorial = this.editorialRepository();
 
-    autorPrueba.editorial=repEditorial;
+    //autorPrueba.editorial=this._editorialRepository.findOne(1);
 
 
 
