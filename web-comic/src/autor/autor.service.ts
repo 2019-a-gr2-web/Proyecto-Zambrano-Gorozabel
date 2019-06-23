@@ -15,13 +15,8 @@ export class AutorService{
 
     console.log(autorPrueba);
 
-    //autorPrueba.editorial= 1;
 
-    //autorPrueba.editorial=this._editorialRepository.findOne(1);
-
-
-
-    const objetoEntidad = this._autorRepository.create(autorPrueba);
+    /*const objetoEntidad = this._autorRepository.create(autorPrueba);
     this._autorRepository
       .save(objetoEntidad)
       .then(
@@ -33,7 +28,7 @@ export class AutorService{
         (error) => {
           console.error('Error:', error);
         }
-      );
+      );*/
   }
 
     async editorialRepository():Promise<EditorialEntity>{
