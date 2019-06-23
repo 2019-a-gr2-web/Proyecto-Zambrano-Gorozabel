@@ -16,6 +16,7 @@ import { EventoModule } from './evento/evento.module';
 import { GeneroModule } from './genero/genero.module';
 import { UsuarioModule } from './usuario/usuario.module';
 import { RolModule } from './rol/rol.module';
+import { LugargeograficoEntity } from './lugargeografico/lugargeografico.entity';
 
 @Module({
   imports: [
@@ -34,7 +35,8 @@ import { RolModule } from './rol/rol.module';
       EventoEntity,
       RolEntity,
       UsuarioEntity,
-      GeneroEntity
+      GeneroEntity,
+      LugargeograficoEntity
     ],
     synchronize: true,
     dropSchema:false,
