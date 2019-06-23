@@ -8,6 +8,14 @@ import { AutorEntity } from './autor/autor.entity';
 import { ComicModule } from './comic/comic.module';
 import { AutorModule } from './autor/autor.module';
 import { EditorialModule } from './editorial/editorial.module';
+import { EventoEntity } from './evento/evento.entity';
+import { RolEntity } from './rol/rol.entity';
+import { UsuarioEntity } from './usuario/usuario.entity';
+import { GeneroEntity } from './genero/genero.entity';
+import { EventoModule } from './evento/evento.module';
+import { GeneroModule } from './genero/genero.module';
+import { UsuarioModule } from './usuario/usuario.module';
+import { RolModule } from './rol/rol.module';
 
 @Module({
   imports: [
@@ -22,7 +30,11 @@ import { EditorialModule } from './editorial/editorial.module';
     entities: [
       ComicEntity,
       EditorialEntity,
-      AutorEntity
+      AutorEntity,
+      EventoEntity,
+      RolEntity,
+      UsuarioEntity,
+      GeneroEntity
     ],
     synchronize: true,
     dropSchema:false,
@@ -31,6 +43,10 @@ import { EditorialModule } from './editorial/editorial.module';
     ComicModule,
     AutorModule,
     EditorialModule,
+    EventoModule,
+    UsuarioModule,
+    GeneroModule,
+    RolModule
   ],
   controllers: [AppController],
   providers: [AppService],

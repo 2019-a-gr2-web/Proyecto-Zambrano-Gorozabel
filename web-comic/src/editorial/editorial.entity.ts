@@ -16,6 +16,6 @@ export class EditorialEntity{
 
   @OneToMany(type=>AutorEntity,
     autor=>autor.editorial)
-  autor:number;
+  autor:AutorEntity;
 
 }
