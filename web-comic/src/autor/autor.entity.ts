@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToMany, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, JoinTable, ManyToMany, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { EditorialEntity } from '../editorial/editorial.entity';
 import { ComicEntity } from '../comic/comic.entity';
 
@@ -22,8 +22,7 @@ export class AutorEntity{
   })
   ciudad:string;
 
-  @ManyToOne(type => EditorialEntity,
-    editorial=>editorial.autor)
-  editorial:EditorialEntity;
+  @ManyToMany(type=>EditorialEntity, editorial=>editorial.autor)
+  editorial:EditorialEntity[];
 
 }

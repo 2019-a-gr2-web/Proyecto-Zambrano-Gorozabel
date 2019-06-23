@@ -1,4 +1,4 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, JoinTable, ManyToMany, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { AutorEntity } from '../autor/autor.entity';
 
 @Entity('editorial')
@@ -14,8 +14,9 @@ export class EditorialEntity{
   })
   nombre:string;
 
-  @OneToMany(type=>AutorEntity,
-    autor=>autor.editorial)
-  autor:AutorEntity;
+  @ManyToMany(type=>AutorEntity, autor=>autor.editorial)
+  @JoinTable()
+  autor:AutorEntity[];
+
 
 }
