@@ -11,7 +11,7 @@ export class EditorialService {
     const editorialPrueba = new EditorialEntity();
     editorialPrueba.nombre="SHUESHIA";
 
-    const objetoEntidad = this._editorialRepository.create(editorialPrueba);
+  /*  const objetoEntidad = this._editorialRepository.create(editorialPrueba);
     this._editorialRepository
       .save(objetoEntidad)
       .then(
@@ -23,6 +23,15 @@ export class EditorialService {
         (error) => {
           console.error('Error:', error);
         }
-      );
+      );*/
+  }
+
+  crear(nuevaEditorial:EditorialEntity):Promise<EditorialEntity>{
+    const objetoEntidad = this._editorialRepository
+      .create(nuevaEditorial);
+    return this._editorialRepository.save(objetoEntidad);
+  }
+  buscar(parametrosBusqueda?):Promise<EditorialEntity[]>{
+    return this._editorialRepository.find(parametrosBusqueda);
   }
 }

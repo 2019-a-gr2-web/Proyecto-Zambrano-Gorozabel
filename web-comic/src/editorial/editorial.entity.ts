@@ -16,7 +16,7 @@ export class EditorialEntity{
 
   @ManyToMany(type=>AutorEntity, autor=>autor.editorial)
   @JoinTable()
-  autor:AutorEntity[];
+  autor:number;
 
 
 }
