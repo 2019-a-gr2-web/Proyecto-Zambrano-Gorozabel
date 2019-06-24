@@ -22,9 +22,10 @@ export class EventoEntity{
   descripcion:string;
 
   @Column({
-    name:'fecha_evento'
+    type:'date',
+    name:'fecha_evento',
+    default:'2019-09-19'
   })
-  @IsDate()
   fecha:Date;
 
 }
