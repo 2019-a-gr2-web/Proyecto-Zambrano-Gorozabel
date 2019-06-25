@@ -1,5 +1,7 @@
 import { Column, Entity, JoinTable, ManyToMany, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { AutorEntity } from '../autor/autor.entity';
+import { EditorialautorEntity } from '../editorialautor/editorialautor.entity';
+import { LugargeograficoEntity } from '../lugargeografico/lugargeografico.entity';
 
 @Entity('editorial')
 export class EditorialEntity{
@@ -13,10 +15,20 @@ export class EditorialEntity{
     name:'nombre_editorial'
   })
   nombre:string;
+  @Column({
+    type:'varchar',
+    length:60,
+    name:'imagen_editorial',
+    nullable:true
+  })
+  imagen:string;
 
-  @ManyToMany(type=>AutorEntity, autor=>autor.editorial)
-  @JoinTable()
-  autor:AutorEntity[];
+  @OneToMany(type=>EditorialautorEntity, editorialAutor => editorialAutor.idEditorial)
+  editorialAutor:EditorialautorEntity[];
+
+  @ManyToMany(type => LugargeograficoEntity, lug => lug.edi)
+  lug: LugargeograficoEntity[];
+
 
 
 }

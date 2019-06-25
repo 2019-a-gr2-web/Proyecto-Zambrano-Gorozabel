@@ -1,5 +1,10 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, JoinTable, ManyToMany, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { IsDate } from 'class-validator';
+import { LugargeograficoEntity } from '../lugargeografico/lugargeografico.entity';
+import { CalificacioncomicEntity } from '../calificacioncomic/calificacioncomic.entity';
+import { CalificacioneventoEntity } from '../calificacionevento/calificacionevento.entity';
+import { EditorialEntity } from '../editorial/editorial.entity';
+import { EditorialautorcomicEntity } from '../editorialautorcomic/editorialautorcomic.entity';
 
 @Entity('evento')
 export class EventoEntity{
@@ -17,14 +22,26 @@ export class EventoEntity{
   @Column({
     type:'varchar',
     length:255,
-    name:'descripcion_evento'
+    name:'imagen_evento'
   })
-  descripcion:string;
+  imagenEvento:string;
 
   @Column({
     name:'fecha_evento'
   })
   @IsDate()
   fecha:Date;
+  @ManyToMany(type => LugargeograficoEntity, lug => lug.eve)
+  lug1: LugargeograficoEntity[];
+  @ManyToMany(type => LugargeograficoEntity, lug => lug.edi)
+  lug: LugargeograficoEntity[];
+
+  @OneToMany(type=>CalificacioneventoEntity, calificacionEvento => calificacionEvento.idEvento)
+  calificacionEvento:CalificacioneventoEntity[];
+
+  @ManyToMany(type => EditorialautorcomicEntity, edi => edi.eve)
+  @JoinTable()
+  edi: EditorialautorcomicEntity[];
+
 
 }

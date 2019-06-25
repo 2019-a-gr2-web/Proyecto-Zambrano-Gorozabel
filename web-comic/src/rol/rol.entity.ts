@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { UsuarioEntity } from '../usuario/usuario.entity';
 
 @Entity('rol')
 export class RolEntity{
@@ -12,5 +13,6 @@ export class RolEntity{
     name:'nombre_rol'
   })
   nombre:string;
-
+  @ManyToMany(type => UsuarioEntity, usuario=>usuario.rol)
+  usuario:UsuarioEntity[];
 }

@@ -1,6 +1,11 @@
-import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, JoinTable, ManyToMany, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { IsEmail } from 'class-validator';
 import { RolEntity } from '../rol/rol.entity';
+import { EventoEntity } from '../evento/evento.entity';
+import { EditorialEntity } from '../editorial/editorial.entity';
+import { ComicEntity } from '../comic/comic.entity';
+import { CalificacioncomicEntity } from '../calificacioncomic/calificacioncomic.entity';
+import { CalificacioneventoEntity } from '../calificacionevento/calificacionevento.entity';
 
 @Entity('usuario')
 export class UsuarioEntity{
@@ -14,7 +19,18 @@ export class UsuarioEntity{
     name:'nombre_usuario'
   })
   nombre:string;
-
+  @Column({
+    type:'varchar',
+    length:255,
+    name:'imagen_usuario'
+  })
+  imagen:string;
+  @Column({
+    type:'varchar',
+    length:13,
+    name:'cedula_usuario'
+  })
+  cedula:string;
   @Column({
     name:'email_usuario'
   })
@@ -28,8 +44,16 @@ export class UsuarioEntity{
   })
   password:string;
 
-  @ManyToMany(type => RolEntity)
+  @ManyToMany(type => RolEntity, rol=>rol.usuario)
   @JoinTable()
-  rolId:RolEntity;
+  rol:RolEntity[];
+  @ManyToMany(type => ComicEntity, comic => comic.usuario)
+  @JoinTable()
+  comic: ComicEntity[];
 
+  @OneToMany(type=>CalificacioncomicEntity, calificacionComic => calificacionComic.idUsuario)
+  calificacionComic:CalificacioncomicEntity[];
+
+  @OneToMany(type=>CalificacioneventoEntity, calificacionEvento => calificacionEvento.idUsuario)
+  calificacionEvento:CalificacioneventoEntity[];
 }
