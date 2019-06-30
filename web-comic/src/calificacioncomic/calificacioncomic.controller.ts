@@ -7,4 +7,4 @@ export class CalificacioncomicController{
   constructor(private readonly _comicServices:CalificacioncomicService){
 
   }
-}
+}//
