@@ -17,6 +17,15 @@ import { GeneroModule } from './genero/genero.module';
 import { UsuarioModule } from './usuario/usuario.module';
 import { RolModule } from './rol/rol.module';
 import { LugargeograficoEntity } from './lugargeografico/lugargeografico.entity';
+import { EditorialautorEntity } from './editorialautor/editorialautor.entity';
+import { EditorialautorModule } from './editorialautor/editorialautor.module';
+import { EditorialautorcomicEntity } from './editorialautorcomic/editorialautorcomic.entity';
+import { EditorialautorcomicModule } from './editorialautorcomic/editorialautorcomic.module';
+import { CalificacioncomicModule } from './calificacioncomic/calificacioncomic.module';
+import { CalificacioncomicService } from './calificacioncomic/calificacioncomic.service';
+import { CalificacioncomicEntity } from './calificacioncomic/calificacioncomic.entity';
+import { CalificacioneventoEntity } from './calificacionevento/calificacionevento.entity';
+import { CalificacioneventoModule } from './calificacionevento/calificacionevento.module';
 
 @Module({
   imports: [
@@ -27,7 +36,7 @@ import { LugargeograficoEntity } from './lugargeografico/lugargeografico.entity'
     port: 3306,
     username: 'root',
     password: 'root',
-    database: 'proyecto',
+    database: 'proyectoweb',
     entities: [
       ComicEntity,
       EditorialEntity,
@@ -36,7 +45,11 @@ import { LugargeograficoEntity } from './lugargeografico/lugargeografico.entity'
       RolEntity,
       UsuarioEntity,
       GeneroEntity,
-      LugargeograficoEntity
+      LugargeograficoEntity,
+      EditorialautorEntity,
+      EditorialautorcomicEntity,
+      CalificacioncomicEntity,
+      CalificacioneventoEntity
     ],
     synchronize: true,
     dropSchema:false,
@@ -48,7 +61,11 @@ import { LugargeograficoEntity } from './lugargeografico/lugargeografico.entity'
     EventoModule,
     UsuarioModule,
     GeneroModule,
-    RolModule
+    RolModule,
+    EditorialautorModule,
+    EditorialautorcomicModule,
+    CalificacioncomicModule,
+    CalificacioneventoModule
   ],
   controllers: [AppController],
   providers: [AppService],

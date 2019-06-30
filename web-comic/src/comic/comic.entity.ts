@@ -1,5 +1,11 @@
-import { Column, Entity, JoinTable, ManyToMany, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { AutorEntity } from '../autor/autor.entity';
+import { EditorialautorEntity } from '../editorialautor/editorialautor.entity';
+import { EditorialautorcomicEntity } from '../editorialautorcomic/editorialautorcomic.entity';
+import { LugargeograficoEntity } from '../lugargeografico/lugargeografico.entity';
+import { UsuarioEntity } from '../usuario/usuario.entity';
+import { CalificacioncomicEntity } from '../calificacioncomic/calificacioncomic.entity';
+import { GeneroEntity } from '../genero/genero.entity';
 
 @Entity('comic')
 export class ComicEntity{
@@ -13,16 +19,34 @@ export class ComicEntity{
     name:'nombre_comic'
   })
   nombre:string;
+  @Column({
+    type: 'varchar',
+    length:20,
+    name:'isbn_comic'
+  })
+  isbn:string;
+  @Column({
+    type: 'varchar',
+    length:255,
+    name:'imagen_comic'
+  })
+  imagenComic:string;
 
   @Column({
-    type:'varchar',
-    length:255,
-    name:'descripcion_comic'
+    type:'boolean',
+    name:'estado_comic'
   })
-  descripcion:string;
+  estadoComic:boolean;
 
-  @ManyToMany(type=>AutorEntity)
-  @JoinTable()
-  autorId:AutorEntity;
+  @ManyToMany(type => GeneroEntity, genero=>genero.comic)
+  genero:ComicEntity[];
+
+  @OneToMany(type=>EditorialautorcomicEntity, autorEditorialComic => autorEditorialComic.idComic)
+  autorEditorialComic:EditorialautorcomicEntity[];
+  @ManyToMany(type => UsuarioEntity, usuario => usuario.comic)
+  usuario: UsuarioEntity[];
+
+  @OneToMany(type=>CalificacioncomicEntity, calificacionComic => calificacionComic.idComic)
+  calificacionComic:CalificacioncomicEntity[];
 
 }
