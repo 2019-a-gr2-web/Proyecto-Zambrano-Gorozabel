@@ -16,12 +16,11 @@ export class EditorialController{
     @Res() res,
     @Body() editorial:EditorialEntity
   ){
-    if(editorial.autor==null){
-      editorial.autor=0;
+    if(editorial.editorialAutor==null){
+      editorial.editorialAutor=null;
     }
     let editorialAValidar = new EditorialCreateDto();
     editorialAValidar.nombre = editorial.nombre;
-    editorialAValidar.autor=editorial.autor;
 
     try{
       const errores = await validate(editorialAValidar);
