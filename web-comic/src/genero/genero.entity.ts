@@ -14,8 +14,8 @@ export class GeneroEntity{
   })
   nombre:string;
 
-  @ManyToMany(type => ComicEntity)
+  @ManyToMany(type => ComicEntity, comic=>comic.genero)
   @JoinTable()
-  comicId:ComicEntity;
+  comic:ComicEntity[];
 
 }
