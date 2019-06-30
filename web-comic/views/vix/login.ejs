@@ -1,0 +1,25 @@
+<% const titulo="Inicio Sesión"%>
+<%- include('../fragments/header',{titulo:titulo})%>
+<div class="container">
+    <div class="centerDiv">
+        <div class="divLogin white">
+            <h2><%=titulo%></h2>
+            <form action="">
+                <div class="form-group row">
+                    <label for="usuario" class="form-control-label col-sm-2">Email</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="usuario" id="usuario" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="passwd" class="form-control-label col-sm-2">Clave</label>
+                    <div class="col-sm-10">
+                        <input type="password" name="passwd" id="passwd" class="form-control">
+                    </div>
+                </div>
+                <button class="btn btn-block btn-dark">Ingresar</button>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include('../fragments/footer')%>
