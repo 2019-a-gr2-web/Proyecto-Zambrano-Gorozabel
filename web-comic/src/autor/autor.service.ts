@@ -31,10 +31,6 @@ export class AutorService{
       );*/
   }
 
-    async editorialRepository():Promise<EditorialEntity>{
-    console.log("ABERR");
-    const repEditorial = await this._editorialRepository.findOne(1);
-    console.log(repEditorial);
-    return repEditorial
-  }
+
+
 }

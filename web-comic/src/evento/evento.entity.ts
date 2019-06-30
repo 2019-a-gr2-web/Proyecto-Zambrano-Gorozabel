@@ -27,9 +27,10 @@ export class EventoEntity{
   imagenEvento:string;
 
   @Column({
-    name:'fecha_evento'
+    type:'date',
+    name:'fecha_evento',
+    default:'2019-09-19'
   })
-  @IsDate()
   fecha:Date;
   @ManyToMany(type => LugargeograficoEntity, lug => lug.eve)
   lug1: LugargeograficoEntity[];
