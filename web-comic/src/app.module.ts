@@ -26,6 +26,7 @@ import { CalificacioncomicService } from './calificacioncomic/calificacioncomic.
 import { CalificacioncomicEntity } from './calificacioncomic/calificacioncomic.entity';
 import { CalificacioneventoEntity } from './calificacionevento/calificacionevento.entity';
 import { CalificacioneventoModule } from './calificacionevento/calificacionevento.module';
+import { LugargeograficoModule } from './lugargeografico/lugargeografico.module';
 
 @Module({
   imports: [
@@ -65,7 +66,8 @@ import { CalificacioneventoModule } from './calificacionevento/calificacionevent
     EditorialautorModule,
     EditorialautorcomicModule,
     CalificacioncomicModule,
-    CalificacioneventoModule
+    CalificacioneventoModule,
+    LugargeograficoModule
   ],
   controllers: [AppController],
   providers: [AppService],
