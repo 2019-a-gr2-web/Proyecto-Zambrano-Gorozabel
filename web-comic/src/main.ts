@@ -18,7 +18,7 @@ async function bootstrap() {
   app.use(express.static('publico'));
   //app.use(favicon(path.join(__dirname,'../publico','imagenes','nero.ico')));
 
-  await app.listen(3001);
+  await app.listen(3002);
 
 
 }

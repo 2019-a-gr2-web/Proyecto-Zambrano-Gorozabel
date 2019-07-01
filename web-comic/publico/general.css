@@ -32,6 +32,13 @@ body.blackBg{
 .wid{
     width: 600%;
 }
+.maxW{
+    width: 100%;
+    display: block;
+}
+.right{
+    margin-left: 10%;
+}
 .divLogin{
     padding: 1em;
     display: inline-block;
@@ -48,7 +55,6 @@ body.blackBg{
     border:solid red 10px;
 }
 .left{
-    text-align: center;
     display: inline-flex;
     align-items: center;
 }

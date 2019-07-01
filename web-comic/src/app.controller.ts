@@ -30,5 +30,10 @@ export class AppController {
   ){
     res.render('vix/menu');
   }
-
+  @Get('comicListar')
+  listarComics(
+    @Res() res
+  ){
+    res.render('comic/comic-listar');
+  }
 }
