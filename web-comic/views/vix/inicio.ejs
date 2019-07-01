@@ -1,0 +1,30 @@
+<% const titulo="VixStart Comic Books"%>
+<%- include('../fragments/header',{titulo:titulo})%>
+<div class="container">
+    <div>
+        <div class="centerDiv">
+            <div class="divInicioContainer row white ">
+                <h2 class="text-center">Ahora es posible gestionar tus comics y mangas de manera más fácil</h2>
+                <div class="col-sm-12 left">
+                    <h2>Accede a tu galería</h2>
+                    <img class="mini" align="right" src="/imagenes/inicio/galleries.png" alt="ComicBook">
+                </div>
+                <div class="col-sm-12 left">
+                    <img class="mini" align="left" src="/imagenes/inicio/events.png" alt="Eventos">
+                    <h2>Descubre eventos</h2>
+                </div>
+                <div class="col-sm-12 left">
+                    <h2 align="left">Conoce más sobre tus autores favoritos</h2>
+                    <img class="mini" src="/imagenes/inicio/gaiman.jpg" alt="Gaiman">
+                    <img class="mini"  src="/imagenes/inicio/dino.png" alt="Mascota">
+                </div>
+                <div class="col-sm-12">
+                    <form action="menu" method="get">
+                        <button class="btn btn-block btn-dark padTop">Explorar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../fragments/footer')%>

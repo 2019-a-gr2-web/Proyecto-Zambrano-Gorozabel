@@ -18,31 +18,31 @@ export class UsuarioEntity{
     length:50,
     name:'nombre_usuario'
   })
-  nombre:string;
+  nombreUsuario:string;
   @Column({
     type:'varchar',
     length:255,
     name:'imagen_usuario'
   })
-  imagen:string;
+  imagenUsuario:string;
   @Column({
     type:'varchar',
     length:13,
     name:'cedula_usuario'
   })
-  cedula:string;
+  cedulaUsuario:string;
   @Column({
     name:'email_usuario'
   })
   @IsEmail()
-  email:string;
+  emailUsuario:string;
 
   @Column({
     type:'varchar',
     length:50,
     name:'pass_usuario'
   })
-  password:string;
+  passwordUsuario:string;
 
   @ManyToMany(type => RolEntity, rol=>rol.usuario)
   @JoinTable()
