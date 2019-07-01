@@ -12,7 +12,7 @@ export class GeneroEntity{
     length:50,
     name:'nombre_genero'
   })
-  nombre:string;
+  nombreGenero:string;
 
   @ManyToMany(type => ComicEntity, comic=>comic.genero)
   @JoinTable()

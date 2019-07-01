@@ -17,7 +17,7 @@ export class EventoEntity{
     length:50 ,
     name:'nombre_evento'
   })
-  nombre:string;
+  nombreEvento:string;
 
   @Column({
     type:'varchar',
@@ -31,7 +31,7 @@ export class EventoEntity{
     name:'fecha_evento',
     default:'2019-09-19'
   })
-  fecha:Date;
+  fechaEvento:Date;
   @ManyToMany(type => LugargeograficoEntity, lug => lug.eve)
   lug1: LugargeograficoEntity[];
   @ManyToMany(type => LugargeograficoEntity, lug => lug.edi)
