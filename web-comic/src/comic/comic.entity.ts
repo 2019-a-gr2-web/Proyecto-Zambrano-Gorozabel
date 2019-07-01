@@ -18,13 +18,13 @@ export class ComicEntity{
     length:50,
     name:'nombre_comic'
   })
-  nombre:string;
+  nombreComic:string;
   @Column({
     type: 'varchar',
     length:20,
     name:'isbn_comic'
   })
-  isbn:string;
+  isbnComic:string;
   @Column({
     type: 'varchar',
     length:255,
