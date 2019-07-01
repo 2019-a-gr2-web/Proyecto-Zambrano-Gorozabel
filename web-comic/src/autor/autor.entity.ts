@@ -14,19 +14,19 @@ export class AutorEntity{
     length:50,
     name:'nombre_autor'
   })
-  nombre:string;
+  nombreAutor:string;
 
   @Column({
     type:'varchar',
     length:50,
     name:'ciudad_autor'
   })
-  ciudad:string;
+  ciudadAutor:string;
   @Column({
     type:'date',
     name:'fecha_nacimiento_autor'
   })
-  fecha_nacimiento:Date;
+  fechaNacimientoAutor:Date;
 
   @Column({
     type:'varchar',
@@ -34,17 +34,13 @@ export class AutorEntity{
     name:'imagen_autor',
     nullable:true
   })
-  imagen:string;
+  imagenAutor:string;
   @Column({
     type:'boolean',
     name:'estado_trabajando_autor'
   })
-  estadoTrabajando:boolean;
-  @Column({
-    type:'integer',
-    name:'num_capitulos_comic',
-  })
-  numCapitulos:number;
+  estadoTrabajandoAutor:boolean;
+
   @OneToMany(type=>EditorialautorEntity, autorEditorial => autorEditorial.idAutor)
   autorEditorial:EditorialautorEntity[];
 
