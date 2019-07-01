@@ -18,10 +18,51 @@ body.blackBg{
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+.padTop{
+    margin-top: 3%;
+}
+.centerDivH{
+    position: absolute;
+    left: 32%;
+    top: 40%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+.wid{
+    width: 600%;
+}
 .divLogin{
+    padding: 1em;
+    display: inline-block;
+    border: solid 2px #000000;
+    background-color: #272929;
+}
+.divInicioContainer{
+    padding: 1em;
+    display: inline-block;
+    border: solid 2px #000000;
+    background:linear-gradient(rgba(18, 18, 18, 0.8), rgba(24, 24, 24, 0.8));
+}
+.bord{
+    border:solid red 10px;
+}
+.left{
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+}
+.mini{
+    width: auto;
+    height: 7em;
+    padding-left: 2%;
+    vertical-align: middle;
+}
+.divInicio{
     padding: 2em;
     display: inline-block;
     border: solid 2px #000000;
+    opacity: 1;
     background-color: #272929;
 }
 .foot{

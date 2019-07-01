@@ -6,8 +6,12 @@ import * as express from 'express';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import * as path from "path";
 
+const cookieParser = require('cookie-parser');
+
+
 async function bootstrap() {
   const app = await NestFactory.create(AppModule) as NestExpressApplication;
+  app.use(cookieParser('Lo hice con mis lagrimas'));
 
   app.setViewEngine('ejs');
   app.setBaseViewsDir(join(__dirname,'..','views'));
