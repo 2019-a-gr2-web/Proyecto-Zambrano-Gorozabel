@@ -15,7 +15,10 @@ export class EditorialController{
   crearEditorial(
     @Res() res
   ){
+
     res.render('editorial/crear-editar-editorial');
+
+   
   }
 
 }

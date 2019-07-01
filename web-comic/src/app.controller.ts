@@ -1,4 +1,4 @@
-import { Controller, Get, Res } from '@nestjs/common';
+import { Controller, Get, Post, Req, Res } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller('vxt')
@@ -16,4 +16,19 @@ export class AppController {
   ){
     res.render('vix/login');
   }
+
+  @Get('inicio')
+  inicio(
+    @Res() res,
+    @Req() req
+  ){
+    res.render('vix/inicio');
+  }
+  @Get('menu')
+  menu(
+    @Res() res
+  ){
+    res.render('vix/menu');
+  }
+
 }
