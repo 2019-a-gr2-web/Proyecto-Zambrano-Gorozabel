@@ -5,7 +5,7 @@ import { CalificacioneventoService } from './calificacionevento.service';
 
 @Controller('vixstart/comic')
 export class CalificacioneventoController{
-  constructor(private readonly _comicServices:CalificacioneventoService){
+  constructor(private readonly _calificacioneventoService:CalificacioneventoService){
 
   }
 }

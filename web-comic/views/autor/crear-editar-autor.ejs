@@ -1,0 +1,61 @@
+<% const titulo = "Crear Autor" %>
+<%- include('../fragments/header',{titulo:titulo}) %>
+<div class="container" style="margin-top:15px">
+    <div class="centerDiv">
+        <div class="divLogin white">
+            <div class= "text-center" style="margin-bottom: 10px">
+                <h2><%=titulo%></h2>
+            </div>
+            <form action="">
+
+                <div class="form-group row">
+                    <label for="nombreAutor" class="form-control-label col-sm-2">Nombre:</label>
+                    <div class="col-sm-9" style="margin-left: 10px">
+                        <input type="text" name="nombreAutor" id="nombreAutor" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="fechaNacimientoAutor" class="form-control-label col-sm-2">Fecha Nac.</label>
+                    <div class="col-sm-9" style="margin-left: 10px">
+                        <input id="fechaNacimientoAutor" name="fechaNacimientoAutor" type="date">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="ciudadAutor" class="form-control-label col-sm-2"> Ciudad:</label>
+                    <div class="col-sm-9" style="margin-left: 10px">
+                        <select name="ciudadAutor" id="ciudadAutor"></select>
+
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="editorialAutor" class="form-control-label col-sm-2"> Editorial:</label>
+                    <div class="col-sm-9" style="margin-left: 10px">
+                        <select name="editorialAutor" id="editorialAutor"></select>
+
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="imagenAutor" class="form-control-label col-sm-2"> Imagen:</label>
+                    <div class="col-sm-9" style="margin-left: 10px ">
+                        <input id="imagenAutor" name="imagenAutor" multiple type="file" accept="image/*">
+                    </div>
+                </div>
+
+
+
+                <div class="form-group row">
+                    <label for="estadoAutor" class="form-control-label col-sm-2">Estado:</label>
+                    <div class="col-sm-9" style="margin-left: 10px; margin-top: 5px">
+                        <input type="checkbox" name="estadoAutor" id="estadoAutor" >
+                    </div>
+                </div>
+
+                <button class="btn btn-block btn-dark">Aceptar</button>
+                <button class="btn btn-block btn-danger">Cancelar</button>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include('../fragments/footer') %>

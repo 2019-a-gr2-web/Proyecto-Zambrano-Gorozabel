@@ -12,7 +12,7 @@ export class RolEntity{
     length:50,
     name:'nombre_rol'
   })
-  nombre:string;
+  nombreRol:string;
   @ManyToMany(type => UsuarioEntity, usuario=>usuario.rol)
   usuario:UsuarioEntity[];
 }

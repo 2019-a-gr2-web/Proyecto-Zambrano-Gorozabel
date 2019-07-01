@@ -4,7 +4,7 @@ import { EditorialautorService } from './editorialautor.service';
 
 @Controller('vixstart/evento')
 export class EditorialautorController{
-  constructor(private readonly _eventoServices:EditorialautorService){
+  constructor(private readonly _editorialautorService:EditorialautorService){
 
   }
 }

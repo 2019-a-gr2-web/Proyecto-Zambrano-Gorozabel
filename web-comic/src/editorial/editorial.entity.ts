@@ -14,14 +14,14 @@ export class EditorialEntity{
     length:50,
     name:'nombre_editorial'
   })
-  nombre:string;
+  nombreEditorial:string;
   @Column({
     type:'varchar',
     length:60,
     name:'imagen_editorial',
     nullable:true
   })
-  imagen:string;
+  imagenEditorial:string;
 
   @OneToMany(type=>EditorialautorEntity, editorialAutor => editorialAutor.idEditorial)
   editorialAutor:EditorialautorEntity[];
