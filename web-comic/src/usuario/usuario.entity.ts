@@ -1,4 +1,4 @@
-import { Column, Entity, JoinTable, ManyToMany, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, JoinTable, ManyToMany, OneToMany, PrimaryGeneratedColumn, Unique } from 'typeorm';
 import { IsEmail } from 'class-validator';
 import { RolEntity } from '../rol/rol.entity';
 import { EventoEntity } from '../evento/evento.entity';
@@ -7,6 +7,10 @@ import { ComicEntity } from '../comic/comic.entity';
 import { CalificacioncomicEntity } from '../calificacioncomic/calificacioncomic.entity';
 import { CalificacioneventoEntity } from '../calificacionevento/calificacionevento.entity';
 
+
+@Unique(["cedulaUsuario"])
+@Unique(["emailUsuario"])
+@Unique(["nombreUsuario"])
 @Entity('usuario')
 export class UsuarioEntity{
 

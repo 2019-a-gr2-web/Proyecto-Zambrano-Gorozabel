@@ -6,8 +6,7 @@
             <div class= "text-center" style="margin-bottom: 10px">
                 <h2><%=titulo%></h2>
             </div>
-            <form action="">
-
+            <form action="crear-Rol" method="post">
                 <div class="form-group row">
                     <label for="nombreRol" class="form-control-label col-sm-2">Nombre:</label>
                     <div class="col-sm-9" style="margin-left: 10px">
@@ -16,7 +15,9 @@
                 </div>
 
                 <button class="btn btn-block btn-dark">Aceptar</button>
-                <button class="btn btn-block btn-danger">Cancelar</button>
+                <a href="/vxt/inicio">
+                    <button type="button" class="btn btn-block btn-danger">Cancelar</button>
+                </a>
             </form>
         </div>
     </div>

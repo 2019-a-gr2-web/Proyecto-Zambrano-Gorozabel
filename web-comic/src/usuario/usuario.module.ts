@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsuarioEntity } from './usuario.entity';
 import { UsuarioController } from './usuario.controller';
 import { UsuarioService } from './usuario.service';
+import { RolModule } from '../rol/rol.module';
 
 @Module({
   imports:[
@@ -11,7 +12,9 @@ import { UsuarioService } from './usuario.service';
         UsuarioEntity       // PRIMERO ES LA ENTIDAD
       ],
       'default'   // SEGUNDO ES EL NOMBRE DE LA CONEXION
-    )
+    ),
+    RolModule
+
   ],     //Modulos
   controllers:[
     UsuarioController
