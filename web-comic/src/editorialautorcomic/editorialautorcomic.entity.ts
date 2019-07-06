@@ -11,7 +11,7 @@ export class EditorialautorcomicEntity{
   @PrimaryGeneratedColumn()
   idAutorEditorial:number;
   @ManyToOne(type=>ComicEntity, comic=>comic.autorEditorialComic)
-    idComic: ComicEntity[]
+  idComic: ComicEntity[]
   @ManyToOne(type=>EditorialautorEntity, editorialAutorCo=>editorialAutorCo.autorEdiComic)
   idEditorialAutorComic: EditorialautorEntity[]
 
