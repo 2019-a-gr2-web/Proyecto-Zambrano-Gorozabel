@@ -6,7 +6,14 @@
             <div class= "text-center" style="margin-bottom: 10px">
                 <h2><%=titulo%></h2>
             </div>
-            <form action="">
+            <form action="/vxt/autor/crear-autor" method="post">
+
+                <div class="form-group row">
+                    <label for="identAutor" class="form-control-label col-sm-2">Ident::</label>
+                    <div class="col-sm-9" style="margin-left: 10px">
+                        <input type="text" name="identAutor" id="identAutor" class="form-control">
+                    </div>
+                </div>
 
                 <div class="form-group row">
                     <label for="nombreAutor" class="form-control-label col-sm-2">Nombre:</label>
@@ -46,9 +53,10 @@
 
 
                 <div class="form-group row">
-                    <label for="estadoAutor" class="form-control-label col-sm-2">Estado:</label>
+                    <label for="estad" class="form-control-label col-sm-2">Estado:</label>
                     <div class="col-sm-9" style="margin-left: 10px; margin-top: 5px">
-                        <input type="checkbox" name="estadoAutor" id="estadoAutor" >
+                        <input type="checkbox" name="estad" id="estad" >
+
                     </div>
                 </div>
 
@@ -58,4 +66,6 @@
         </div>
     </div>
 </div>
+
+
 <%- include('../fragments/footer') %>
