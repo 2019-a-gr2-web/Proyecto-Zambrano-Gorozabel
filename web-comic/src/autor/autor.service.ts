@@ -10,8 +10,7 @@ export class AutorService{
   constructor(@InjectRepository(AutorEntity) private readonly _autorRepository: Repository<AutorEntity>,
               @InjectRepository(EditorialEntity) private readonly  _editorialRepository:Repository<EditorialEntity>) {
     const autorPrueba = new AutorEntity();
-    autorPrueba.nombre="Kishimoto";
-    autorPrueba.ciudad="Kyoto";
+
 
     console.log(autorPrueba);
 
