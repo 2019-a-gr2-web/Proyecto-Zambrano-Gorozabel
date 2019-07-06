@@ -1,4 +1,4 @@
-import { IsEmpty, IsNotEmpty, IsNumber, IsString } from 'class-validator';
+import { IsEmpty, IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
 
 export class EditorialCreateDto{
 
@@ -7,10 +7,14 @@ export class EditorialCreateDto{
 
   @IsNotEmpty()
   @IsString()
-  nombre:string;
+  nombreEditorial:string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsNumber()
-  autor:number;
+  lug:number;
+
+  @IsOptional()
+  @IsNumber()
+  editorialAutor:number;
 
 }
