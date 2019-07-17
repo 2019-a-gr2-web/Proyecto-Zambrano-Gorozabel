@@ -21,7 +21,7 @@ export class RolController{
     @Body() rol:RolEntity
   ){
     try{
-      var 
+
     }catch (e) {
 
     }

@@ -12,9 +12,9 @@ export class EditorialautorEntity{
 
 
   @ManyToOne(type=>EditorialEntity, editorial=>editorial.editorialAutor)
-  idEditorial: EditorialEntity[]
-  @ManyToOne(type=>AutorEntity, autor=>autor.autorEditorial)
-  idAutor: AutorEntity[]
+  idEditorial: EditorialEntity[];
+  @ManyToOne(type=>AutorEntity, autor=>autor.editorialAutor)
+  idAutor: AutorEntity[];
   @OneToMany(type=>EditorialautorcomicEntity, autorEdiComic => autorEdiComic.idEditorialAutorComic)
   autorEdiComic:EditorialautorcomicEntity[];
 }
