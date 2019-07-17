@@ -1,5 +1,6 @@
-import { Controller, Get, Res } from '@nestjs/common';
+import { Body, Controller, Get, Post, Res } from '@nestjs/common';
 import { RolService } from './rol.service';
+import { RolEntity } from './rol.entity';
 
 @Controller('vxt/rol')
 export class RolController{
@@ -8,9 +9,21 @@ export class RolController{
   }
 
   @Get('crearRol')
-  crearUsuario(
+  crearRol(
     @Res() res
   ){
     res.render('rol/crear-editar-rol');
+  }
+
+  @Post('crear-Rol')
+  async crearRolsito(
+    @Res() res,
+    @Body() rol:RolEntity
+  ){
+    try{
+      var 
+    }catch (e) {
+
+    }
   }
 }
