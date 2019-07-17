@@ -3,6 +3,7 @@ import { IsDate } from 'class-validator';
 import { EditorialEntity } from '../editorial/editorial.entity';
 import { JoinTable } from 'typeorm/decorator/relations/JoinTable';
 import { EventoEntity } from '../evento/evento.entity';
+import { AutorEntity } from '../autor/autor.entity';
 
 @Entity('lugar_geografico')
 export class LugargeograficoEntity{
@@ -28,5 +29,8 @@ export class LugargeograficoEntity{
   @ManyToMany(type => EventoEntity, eve => eve.lug1)
   @JoinTable()
   eve: EditorialEntity[];
+
+  @OneToMany(type=>AutorEntity, autor => autor.ciudadAutor)
+  idAutor:AutorEntity[];
 
 }

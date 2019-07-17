@@ -1,6 +1,7 @@
-import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn, Unique } from 'typeorm';
 import { UsuarioEntity } from '../usuario/usuario.entity';
 
+@Unique(["nombreRol"])
 @Entity('rol')
 export class RolEntity{
 

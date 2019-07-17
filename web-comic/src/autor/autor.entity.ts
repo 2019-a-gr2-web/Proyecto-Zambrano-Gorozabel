@@ -2,13 +2,19 @@ import { Column, Entity, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryGen
 import { EditorialEntity } from '../editorial/editorial.entity';
 import { ComicEntity } from '../comic/comic.entity';
 import { EditorialautorEntity } from '../editorialautor/editorialautor.entity';
+import { LugargeograficoEntity } from '../lugargeografico/lugargeografico.entity';
 
 @Entity('autor')
 export class AutorEntity{
 
   @PrimaryGeneratedColumn()
   idAutor:number;
-
+  @Column({
+    type:'varchar',
+    length:50,
+    name:'id-autor'
+  })
+  identAutor: string;
   @Column({
     type:'varchar',
     length:50,
@@ -16,12 +22,7 @@ export class AutorEntity{
   })
   nombreAutor:string;
 
-  @Column({
-    type:'varchar',
-    length:50,
-    name:'ciudad_autor'
-  })
-  ciudadAutor:string;
+
   @Column({
     type:'date',
     name:'fecha_nacimiento_autor'
@@ -37,11 +38,15 @@ export class AutorEntity{
   imagenAutor:string;
   @Column({
     type:'boolean',
-    name:'estado_trabajando_autor'
+    name:'estado_trabajando_autor',
+    default: false
   })
   estadoTrabajandoAutor:boolean;
 
   @OneToMany(type=>EditorialautorEntity, autorEditorial => autorEditorial.idAutor)
-  autorEditorial:EditorialautorEntity[];
+  editorialAutor:EditorialautorEntity[];
+
+  @ManyToOne(type=>LugargeograficoEntity, ciudad => ciudad.idAutor)
+  ciudadAutor:LugargeograficoEntity[];
 
 }
