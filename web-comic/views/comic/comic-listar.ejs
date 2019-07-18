@@ -1,9 +1,24 @@
 <% const titulo="Comics VXT"%>
+<% const comic= comics%>
 <%- include('../fragments/header',{titulo:titulo})%>
 <div class="container">
     <div class="divInicioContainer white padTop maxW left">
         <h3>Buscar</h3>
         <input class="form-control left right" type="text" placeholder="Buscar Comic">
     </div>
-    
+    <div class="divInicioContainer  white padTop maxW left">
+        <% comic.forEach(
+            (it)=>{%>
+        <div class="divInicioContainer white padTop maxW left">
+            <div class="">
+                <h4><%=it.nombreComic%></h4>
+            </div>
+
+            <div>
+                <img src="/imagenes/inicio/dSuper.jpg" alt=""class="fitImg">
+            </div>
+
+        </div>
+        <%})%>
+    </div>
 </div>

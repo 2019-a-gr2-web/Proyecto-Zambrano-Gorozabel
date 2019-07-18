@@ -4,6 +4,7 @@ import { AutorEntity } from './autor.entity';
 import { AutorService } from './autor.service';
 import { AutorController } from './autor.controller';
 import { EditorialEntity } from '../editorial/editorial.entity';
+import { EditorialService } from '../editorial/editorial.service';
 
 @Module({
   imports:[
@@ -19,7 +20,8 @@ import { EditorialEntity } from '../editorial/editorial.entity';
     AutorController
   ], //Controladores
   providers:[
-    AutorService
+    AutorService,
+    EditorialService
   ],   //Servicios
   exports:[
     AutorService

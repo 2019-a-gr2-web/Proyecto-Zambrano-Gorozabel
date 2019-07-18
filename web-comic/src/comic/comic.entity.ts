@@ -1,8 +1,5 @@
-import { Column, Entity, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
-import { AutorEntity } from '../autor/autor.entity';
-import { EditorialautorEntity } from '../editorialautor/editorialautor.entity';
+import { Column, Entity, ManyToMany, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { EditorialautorcomicEntity } from '../editorialautorcomic/editorialautorcomic.entity';
-import { LugargeograficoEntity } from '../lugargeografico/lugargeografico.entity';
 import { UsuarioEntity } from '../usuario/usuario.entity';
 import { CalificacioncomicEntity } from '../calificacioncomic/calificacioncomic.entity';
 import { GeneroEntity } from '../genero/genero.entity';

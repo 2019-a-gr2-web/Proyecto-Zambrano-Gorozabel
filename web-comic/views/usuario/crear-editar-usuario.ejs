@@ -6,7 +6,7 @@
             <div class= "text-center" style="margin-bottom: 10px">
                 <h2><%=titulo%></h2>
             </div>
-            <form action="">
+            <form action="crearNUsuario"method="post">
                 <div class="form-group row">
                     <label for="cedulaUsuario" class="form-control-label col-sm-2">Cédula:</label>
                     <div class="col-sm-9" style="margin-left: 10px">
@@ -54,7 +54,9 @@
                     </div>
                 </div>
                 <button class="btn btn-block btn-dark">Aceptar</button>
-                <button class="btn btn-block btn-danger">Cancelar</button>
+            </form>
+            <form action="/vxt/login" method="get">
+                <button class="btn btn-block btn-danger padTop">Cancelar</button>
             </form>
         </div>
     </div>
