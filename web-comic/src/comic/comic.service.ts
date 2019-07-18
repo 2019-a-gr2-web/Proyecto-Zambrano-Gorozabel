@@ -14,7 +14,7 @@ export class ComicService{
     return this._comicRepository.save(comic);
   }
 
-  listar(parametro):Promise<ComicEntity[]>{
+  listar(parametro?):Promise<ComicEntity[]>{
     return this._comicRepository.find(parametro);
   }
 

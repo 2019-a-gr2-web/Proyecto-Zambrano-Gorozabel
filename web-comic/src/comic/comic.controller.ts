@@ -83,10 +83,27 @@ export class ComicController{
     }
   }
 
+  async buscarComics():Promise<ComicEntity[]>{
+    try{
+      return await this._comicServices.listar();
+    }catch (e) {
+      console.error(e);
+    }
+  }
+
   @Get("lista")
-  listarComics(
+  async listarComics(
     @Res() res
   ){
-    res.render('comic')
+    try{
+      var comics = await this.buscarComics();
+    }catch (e) {
+      console.error(e);
+    }
+
+    console.log(comics);
+    res.render('comic/comic-listar',{
+      comics:comics
+    })
   }
 }
