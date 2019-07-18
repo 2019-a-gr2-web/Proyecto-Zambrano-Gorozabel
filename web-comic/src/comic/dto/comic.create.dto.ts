@@ -1,4 +1,4 @@
-import { IsEmpty, IsNotEmpty, IsString } from 'class-validator';
+import { IsArray, IsEmpty, IsNotEmpty, IsString } from 'class-validator';
 
 export class ComicCreateDto{
   @IsEmpty()
@@ -8,5 +8,17 @@ export class ComicCreateDto{
   @IsString()
   nombreComic:string;
 
+  @IsNotEmpty()
+  @IsString()
+  isbnComic:string;
 
+  @IsNotEmpty()
+  @IsString()
+  imagenComic:string;
+
+ /* @IsNotEmpty()
+  genero:any;
+
+  @IsNotEmpty()
+  autor:any;*/
 }

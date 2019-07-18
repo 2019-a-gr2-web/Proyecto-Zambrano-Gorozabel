@@ -16,5 +16,9 @@ export class AutorService{
     return this._autorRepository.save(objetoEntidad);//promesa
   }
 
+  listar(parametros?):Promise<AutorEntity[]>{
+    return this._autorRepository.find(parametros);
+  }
+
 
 }
