@@ -14,4 +14,8 @@ export class GeneroService{
     const objetoEntidad= this._generoRepository.create(nuevoGenero);
     return this._generoRepository.save(objetoEntidad);//promesa
   }
+
+  listar(parametros?):Promise<GeneroEntity[]>{
+    return this._generoRepository.find(parametros);
+  }
 }

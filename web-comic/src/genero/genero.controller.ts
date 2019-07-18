@@ -24,13 +24,8 @@ export class GeneroController{
     @Body() genero: GeneroEntity,
     @Res() res
   ) {
-
-
     let generoAValidar = new GeneroCreateDto();
-
     generoAValidar.nombreGenero = genero.nombreGenero;
-
-
     console.log(genero);
     try {
       const errores = await validate(generoAValidar);
@@ -38,13 +33,11 @@ export class GeneroController{
         console.error(errores);
 
       } else {
-
         const respuestaCrear = await this._generoServices
           .crear(genero); // Promesa
 
         console.log('RESPUESTA: ', respuestaCrear);
         res.redirect('/vxt/autor/crearAutor');
-
       }
     } catch
       (e) {
