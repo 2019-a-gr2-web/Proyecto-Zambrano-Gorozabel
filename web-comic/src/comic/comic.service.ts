@@ -20,7 +20,8 @@ export class ComicService{
   buscar(id):Promise<ComicEntity>{
     return this._comicRepository.findOne(id);
   }
-  actualizar(comic:ComicEntity):Promise<ComicEntity>{
+  actualizar(id:number, comic:ComicEntity):Promise<ComicEntity>{
+    comic.idComic=id;
     const obj= this._comicRepository.create(comic);
     return this._comicRepository.save(obj);
   }
