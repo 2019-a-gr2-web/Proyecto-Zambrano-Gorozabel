@@ -1,9 +1,36 @@
 <% const titulo="Comics VXT"%>
+<% const comic= comics%>
 <%- include('../fragments/header',{titulo:titulo})%>
 <div class="container">
+    <div class="divInicioContainer white padTop maxW ">
+        <form action="/vxt/comic/CrearComic" method="get">
+            <button class="btn btn-dark btn-block">Crear</button>
+        </form>
+
+    </div>
     <div class="divInicioContainer white padTop maxW left">
         <h3>Buscar</h3>
         <input class="form-control left right" type="text" placeholder="Buscar Comic">
     </div>
-
+    <div class="divInicioContainer  white padTop maxW leftrow">
+        <% comic.forEach(
+            (it)=>{%>
+        <div class="divInicioContainer white padTop maxW marginLZero col-sm-12 row" onclick="mostrar(this)">
+            <input type="text" value="<%=it.idComic%>" hidden>
+            <div class="col-sm-12">
+                <h4><%=it.nombreComic%></h4>
+            </div>
+            <div class="col-sm-12">
+                <img src="<%=it.imagenComic%>" alt=""class="fitImg">
+            </div>
+        </div>
+        <%})%>
+    </div>
 </div>
+
+<script>
+  function mostrar(element){
+    var id_comic =element.querySelector("input").value
+    location.replace("/vxt/comic/mostrar/"+id_comic)
+  }
+</script>

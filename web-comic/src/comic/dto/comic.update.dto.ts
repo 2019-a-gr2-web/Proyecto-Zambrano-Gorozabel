@@ -1,7 +1,7 @@
 import { IsArray, IsEmpty, IsNotEmpty, IsString } from 'class-validator';
 
-export class ComicCreateDto{
-  @IsEmpty()
+export class ComicUpdateDto{
+  @IsNotEmpty()
   idComic:number;
 
   @IsNotEmpty()
@@ -20,9 +20,9 @@ export class ComicCreateDto{
   @IsString()
   imagenComic:string;
 
- /* @IsNotEmpty()
-  genero:any;
+  /* @IsNotEmpty()
+   genero:any;
 
-  @IsNotEmpty()
-  autor:any;*/
+   @IsNotEmpty()
+   autor:any;*/
 }

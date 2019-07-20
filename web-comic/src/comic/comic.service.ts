@@ -11,11 +11,18 @@ export class ComicService{
 
   crear(comic: ComicEntity):Promise<ComicEntity>{
     const objEntity=this._comicRepository.create(comic);
-    return this._comicRepository.save(comic);
+    return this._comicRepository.save(objEntity);
   }
 
-  listar(parametro):Promise<ComicEntity[]>{
+  listar(parametro?):Promise<ComicEntity[]>{
     return this._comicRepository.find(parametro);
+  }
+  buscar(id):Promise<ComicEntity>{
+    return this._comicRepository.findOne(id);
+  }
+  actualizar(comic:ComicEntity):Promise<ComicEntity>{
+    const obj= this._comicRepository.create(comic);
+    return this._comicRepository.save(obj);
   }
 
 }
