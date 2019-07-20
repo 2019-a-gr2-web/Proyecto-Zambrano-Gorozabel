@@ -1,0 +1,46 @@
+<% const comic= comics%>
+<% const titulo=comic.nombreComic+" - Comics VXT"%>
+<%- include('../fragments/header',{titulo:titulo})%>
+<div class="container">
+    <div class="divInicioContainer  white padTop maxW leftrow">
+        <div class="col-sm-12">
+            <h3><%=comic.nombreComic%></h3>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <p><%=comic.descripcionComic%></p>
+            </div>
+            <div class="col-sm-6">
+                <img class="fitImg" src="<%=comic.imagenComic%>" alt="<%=comic.nombreComic%>" >
+            </div>
+        </div>
+        <div class="left">
+            <label for="comicCalificacion">Calificación</label>
+            <input type="number"
+                   max="10"
+                   min="1"
+                   step="1"
+                   id="calificacionComic"
+                   name="calificacionComic"
+                   class="form-control right">
+        </div>
+        <a href="/vxt/comic/editarComic/<%=comic.idComic%>">
+            <button class="btn btn-block btn-primary padTop">Editar</button>
+        </a>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $("#calificacionComic").onchange(function(){
+        const url="/vxt/comic/putCalificacion";
+        const calific = document.getElementById("calificacionComic").innerText;
+        const data={
+          calificacion:calific
+        }
+        $.post(url,data,function(data,status){
+          console.log(`${data} and status is ${status}`)
+        });
+    });
+</script>
+<%- include('../fragments/footer') %>

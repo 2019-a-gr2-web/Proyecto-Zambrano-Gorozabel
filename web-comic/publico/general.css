@@ -35,11 +35,25 @@ body.blackBg{
 .fitImg {
     max-width: 100%;
     max-height: 100%;
+    display:block;
+    margin: auto;
 }
 .text-box {
     height: 100%;
     text-align: center;
     width: 100%;
+}
+.boton{
+    border: solid 2px black;
+    border-radius: 3px
+}
+.boton-seleccionado{
+    color: black;
+    background-color: grey;
+}
+.boton-sin-seleccion{
+    color: white;
+    background-color: blue;
 }
 .maxW{
     width: 100%;
@@ -47,6 +61,9 @@ body.blackBg{
 }
 .right{
     margin-left: 10%;
+}
+.marginLZero{
+    margin-left: 0%;
 }
 .divLogin{
     padding: 1em;

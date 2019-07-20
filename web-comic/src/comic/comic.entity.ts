@@ -23,6 +23,12 @@ export class ComicEntity{
   })
   isbnComic:string;
   @Column({
+    type:'varchar',
+    length:255,
+    name:'descripcion_comic'
+  })
+  descripcionComic:string;
+  @Column({
     type: 'varchar',
     length:255,
     name:'imagen_comic'
