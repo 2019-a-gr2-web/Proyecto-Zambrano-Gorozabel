@@ -156,7 +156,7 @@ export class ComicController{
     try{
       var comicActualizado = await this._comicServices.buscar(idComic);
       comicActualizado = comic;
-      comicActualizado.idComic = idComic;
+      comicActualizado.idComic = +idComic;
     }catch (e) {
       console.error(e)
     }
@@ -179,9 +179,9 @@ export class ComicController{
         console.log("Errores");
         console.log(errores);
       }else{
-        const respuesta =await this._comicServices.actualizar(comic);
+        const respuesta =await this._comicServices.actualizar(+idComic,comic);
         console.log(respuesta);
-        res.redirect('/vxt/comic/mostrar'+idComic);
+        res.redirect('/vxt/comic/mostrar/'+idComic);
       }
     }
     catch (e) {
